@@ -1,0 +1,21 @@
+# Global configuration for all experiments
+repetitions: 200            # per (function × dimension × algorithm)
+pop_size: 30                # identical across algorithms (Big-O parity)
+eval_budget: 5000           # function evaluations per run (adjust as needed)
+dims: [10, 30, 50]
+functions: ["sphere", "rosenbrock", "rastrigin", "ackley"]
+algorithms: ["gwo", "pso", "ga", "de", "hs"]
+bounds:
+  sphere: [-5.12, 5.12]
+  rosenbrock: [-5.0, 10.0]
+  rastrigin: [-5.12, 5.12]
+  ackley: [-32.768, 32.768]
+target_fitness: 1.0e-8      # used only for reporting; budget parity always enforced
+seed_base: 20251029         # global base seed; run-seed = seed_base + run_index
+log_freq_iters: 1           # log every N iterations
+enable_freq_temp: true      # try to read CPU freq and temperature
+tuning:
+  enabled: false            # set true to run tuning once (offline) then use saved configs
+  configs_per_algo: 6
+  reps_per_config: 10
+  eval_budget_per_rep: 1000
