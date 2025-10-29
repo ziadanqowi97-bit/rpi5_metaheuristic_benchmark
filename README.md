@@ -68,5 +68,3 @@ We try (in order): `vcgencmd` if available, then `/sys/class/thermal/*/temp` and
 If unavailable, the fields will be NaN gracefully.
 
 ---
-
-**License**: MIT
